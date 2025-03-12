@@ -11,7 +11,7 @@ int num_of_point_LD;
 int num_of_point_TD;
 
 typedef struct Time_Course{
-        char gene_ID[20];
+        char gene_ID[50];
         double *LD_exp;
         double *TD_exp;
         int level;
@@ -23,8 +23,8 @@ Time_Course *TF_exp_table;
 Time_Course *gene_seed_table;
 
 typedef struct Relation_table{
-    char query_gene_ID[20];
-    char target_gene_ID[20];
+    char query_gene_ID[50];
+    char target_gene_ID[50];
     int checked;
 } R_table;
 
@@ -39,13 +39,13 @@ float pos_cutoff_TD;
 float pos_no_cutoff = 0.5;
 float neg_no_cutoff = -0.5;
 
-char seed_TF_ID[20];  //seed_TF_ID for testing: "Zm00001d041056" (ZmARF2) for C1_+C2+
+char seed_TF_ID[50];  //seed_TF_ID for testing: "Zm00001d041056" (ZmARF2) for C1_+C2+
 
 int done = 0;
 
 void Read_Time_Course_Data_TFs (char *input) {
 	FILE *fptr = fopen(input, "r");
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 
@@ -103,7 +103,7 @@ void Read_Time_Course_Data_TFs (char *input) {
 
 void Read_Time_Course_Data_genes (char *input) {
 	FILE *fptr = fopen(input, "r");
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 	
@@ -159,7 +159,7 @@ void Read_Time_Course_Data_genes (char *input) {
 
 void Read_seed_genes (char *input) {
     FILE *fptr = fopen(input, "r");
-    char GID[20];
+    char GID[50];
     
     num_of_seeds = 0;
     while(fscanf(fptr,"%s", GID) != EOF) {

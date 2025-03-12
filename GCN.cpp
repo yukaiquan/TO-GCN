@@ -10,7 +10,7 @@ int num_of_point_LD;
 int num_of_point_TD;
 
 typedef struct Time_Course{
-        char gene_ID[20];
+        char gene_ID[50];
         double *LD_exp;
         double *TD_exp;
         int network[10];
@@ -28,7 +28,7 @@ float neg_no_cutoff = -0.5;
 
 void Read_Time_Course_Data_TFs (char *input) {
 	FILE *fptr = fopen(input, "r");
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 
@@ -86,7 +86,7 @@ void Read_Time_Course_Data_TFs (char *input) {
 
 void Read_Time_Course_Data_genes (char *input) {
 	FILE *fptr = fopen(input, "r");
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 	

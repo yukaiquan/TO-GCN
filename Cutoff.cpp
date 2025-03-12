@@ -16,7 +16,7 @@ char input_file_TF[100];   //TF gene list
 char input_file_gene[100];   //All gene list
 
 typedef struct Time_Course{
-        char gene_ID[20];
+        char gene_ID[50];
         double *LD_exp;
         double *TD_exp;
         int network[10];
@@ -28,7 +28,7 @@ Time_Course *TF_exp_table;
 void Read_Time_Course_Data_TFs (char *input) {
 	FILE *fptr = fopen(input, "r");
     
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 
@@ -87,7 +87,7 @@ void Read_Time_Course_Data_TFs (char *input) {
 void Read_Time_Course_Data_genes (char *input) {
 	FILE *fptr = fopen(input, "r");
 
-	char GID[20];
+	char GID[50];
 	double LDE[num_of_point_LD];
 	double TDE[num_of_point_TD];
 	
